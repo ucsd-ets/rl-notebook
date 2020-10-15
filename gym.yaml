@@ -1,0 +1,23 @@
+name: gym
+channels:
+- defaults
+- pytorch
+- anaconda
+- conda-forge
+- nvidia
+dependencies:
+- python=3.7
+- pip
+- numpy
+- gym
+- pandas
+- pyglet
+- cudatoolkit=10.1
+- pip:
+  - ipywidgets
+  - tensorboardx
+  - opencv-python
+  - matplotlib
+  - pybullet
+  - tensorflow-gpu>=2.2
+prefix: /opt/conda
