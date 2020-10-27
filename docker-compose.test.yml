@@ -1,0 +1,15 @@
+version: "2.2"
+services:
+    jupyter:
+        build: .
+        command: bash -c "export DISPLAY="" && /usr/share/datahub/tests/datahub-base-notebook/test.sh && /run_jupyter.sh --ip 0.0.0.0 --NotebookApp.token='' --allow-root"
+        user: root
+        ports:
+        - "8889:8888"
+    sut:
+        image: ucsdets/notebook-tests:latest
+        links:
+        - jupyter
+        command:
+        - python
+        - /opt/datahub/test-ui.py
