@@ -63,7 +63,6 @@ RUN conda run -n gym /bin/bash -c "pip install torch==1.5.0+cu101 torchvision==0
 ENV DISPLAY=':99.0'
 
 COPY run_jupyter.sh /
-RUN chmod +x /run_jupyter.sh && \
-    chmod -R 777 /opt
+RUN chmod 777 /run_jupyter.sh
 
 USER $NB_USER
