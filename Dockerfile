@@ -58,6 +58,7 @@ RUN conda run -n gym /bin/bash -c "pip install torch==1.5.0+cu101 torchvision==0
                                    cd /opt; \
                                    git clone https://github.com/benelot/pybullet-gym.git; \
                                    cd pybullet-gym; pip install -e .; \
+                                   pip install gym[atari]; \
                                    ipython kernel install --name=gym"
 								   
 ENV DISPLAY=':99.0'
